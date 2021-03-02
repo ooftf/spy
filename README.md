@@ -1,6 +1,8 @@
 # **Spy**
-在Build项目时检查Class之间的引用关系，避免因为依赖库版本问题而产生的ClassNotFoundException问题
+
+在Build项目时检查Class之间的引用关系，避免因为依赖库版本问题而产生的ClassNotFoundException问题  
 本项目借鉴于https://github.com/Sunzxyong/ApiInspect ，增加了检测范围；优化了兼容性问题；添加了interruptBuild；
+
 -------------------------------------------------------------------------------
 
 [ ![Download](https://api.bintray.com/packages/ooftf/maven/spy-plugin/images/download.svg) ](https://bintray.com/ooftf/maven/spy-plugin/_latestVersion)
