@@ -101,7 +101,7 @@ class DefaultApiInspectFilter implements ApiInspectFilter {
     }
 
     boolean isJavaSystemClass(String name) {
-        return name.startsWith("java.") || name.startsWith("javax.") || name.startsWith("org.apache.") || name.startsWith("sun.misc.") || name.startsWith("kotlin.") || name.startsWith("META-INF.")
+        return name.startsWith("java.") || name.startsWith("javax.") || name.startsWith("org.apache.") || name.startsWith("sun.misc.") || name.startsWith("kotlin.") || name.startsWith("META-INF.")|| name.startsWith("dalvik.")
     }
 
     boolean isAndroidSystemClass(String name) {

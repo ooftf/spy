@@ -51,11 +51,24 @@ spy {
 //    }
 
     //Specify the library not to inspect.
-//    exclude {
-//        //Value is the package name.
-//        api 'com.zxy.tiny'
-//        api 'com.google.zxing'
-//    }
+       /*exclude {
+        //Value is the package name.
+        api 'com.taobao.'
+        api 'com.alibaba.'
+        api 'org.'
+        api 'com.baidubce.'
+        api 'com.heytap.'
+        api 'com.meizu.'
+        api 'com.huawei.'
+        api 'com.google.'
+        api 'com.vivo.'
+        api 'edu.umd.cs.findbugs.annotations.SuppressFBWarnings'
+        api 'com.squareup.picasso.'
+        api 'com.alipay.'
+        api 'dalvik.'
+        api 'sun.nio.'
+        api 'okhttp3.internal.annotations.EverythingIsNonNull'
+    }*/
 
 }
 ```
