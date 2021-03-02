@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi()//gradle sdk
+    implementation localGroovy()//groovy sdk
+    implementation 'com.android.tools.build:gradle:4.1.2'
+    implementation 'org.javassist:javassist:3.25.0-GA'
+}
+
+
+apply plugin: 'ooftf-publish'
+publish {
+    override = true
+    publishVersion = '1.0.0'
+}
+//./gradlew :inspect-plugin:clean :inspect-plugin:build :inspect-plugin:bintrayUpload -PdryRun=false

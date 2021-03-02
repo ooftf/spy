@@ -1,0 +1,4 @@
+include ':lib-test'
+include ':spy-plugin'
+include ':app'
+rootProject.name = "spy"
