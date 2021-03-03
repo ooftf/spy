@@ -54,6 +54,7 @@ class ApiInspector {
                     IncompatibleClassInfo info = new IncompatibleClassInfo()
                     info.className = clazz.name
                     info.incompatibleClassName = it
+                    if (!mApiInspectFilter.filter(info))
                     mIncompatibleClasses.add(info)
                 } catch (Exception e) {
                     e.printStackTrace()
@@ -83,7 +84,8 @@ class ApiInspector {
                             info.methodName = m.methodName
                             info.signature = m.signature
                             info.lineNumber = m.lineNumber
-                            mIncompatibleMethods.add(info)
+                            if (!mApiInspectFilter.filter(info))
+                                mIncompatibleMethods.add(info)
                         } catch (Exception e) {
                             e.printStackTrace()
                         }

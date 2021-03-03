@@ -14,5 +14,7 @@ interface ApiInspectFilter {
 
     boolean filter(CtMethod method)
 
+    boolean filter(IncompatibleClassInfo ici)
+    boolean filter(IncompatibleMethodInfo ici)
 
 }

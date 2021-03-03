@@ -7,12 +7,18 @@ import com.google.common.base.Strings
  */
 class ApiInspectExcludeExtension {
 
-    Set<String> apis = new HashSet<>()
+    Set<FilterItem> apis = new HashSet<>()
 
-    void api(String api) {
-        if (Strings.isNullOrEmpty(api))
+
+    void api(String name = "", String occurName = "", String method = "", String lineNumber = "") {
+        if (Strings.isNullOrEmpty(name) && Strings.isNullOrEmpty(occurName) && Strings.isNullOrEmpty(method) && Strings.isNullOrEmpty(lineNumber))
             return
-        apis.add(api)
+        FilterItem item = new FilterItem()
+        item.name = name
+        item.occurName = occurName
+        item.method = method
+        item.lines = lineNumber
+        apis.add(item)
     }
 
 }

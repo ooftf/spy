@@ -1,7 +1,12 @@
 # **Spy**
 
 在Build项目时检查Class之间的引用关系，避免因为依赖库版本问题而产生的ClassNotFoundException问题  
-本项目借鉴于https://github.com/Sunzxyong/ApiInspect ，增加了检测范围；优化了兼容性问题；添加了interruptBuild；
+本项目借鉴于https://github.com/Sunzxyong/ApiInspect 修改内容如下
+* 增加了检测范围；
+* 支持className occurClassName method LineNumber多条件过滤
+* 修改为Referenced方式，不再Copy文件
+* 优化了兼容性问题；
+* 添加了interruptBuild属性，可选择打断Build过程
 
 -------------------------------------------------------------------------------
 
@@ -22,7 +27,7 @@ Add dependencies in **`build.gradle`** of the **`root project`**：
     }
     dependencies {
         // ...
-        classpath('com.ooftf:spy-plugin:1.0.0') {
+        classpath('com.ooftf:spy-plugin:1.0.1') {
             exclude group: 'com.android.tools.build', module: 'gradle'
         }
     }
@@ -68,6 +73,8 @@ spy {
         api 'dalvik.'
         api 'sun.nio.'
         api 'okhttp3.internal.annotations.EverythingIsNonNull'
+        api 'com.nostra13.universalimageloader.','com.didichuxing.doraemonkit'
+        api 'com.tencent.map.geolocation.','com.didichuxing.doraemonkit'
     }*/
 
 }
