@@ -40,7 +40,7 @@ apply plugin: 'ooftf-spy'
 ```
 
 ### **Configuration**
-By default, **`ApiInspect`** will inspects all apis but does not contain the system api. Of course, you can also customize **`exclude`** or **`include`** Settings：
+By default, **`spy`** will inspects all apis but does not contain the system api. Of course, you can also customize **`exclude`** or **`include`** Settings：
 
 ```
 spy {
