@@ -79,7 +79,11 @@ spy {
 
 }
 ```
+-------
 
+    刚刚添spy可能报错比较多不要慌，一步步配置exclude即可，  
+    首先根据报错信息找到对应的类，如果对应位置有try catch处理这些一般可以添加到exclude
+    还有一些是不会运行到的类也可以添加到exclude
 ## **Inspect Result**
 When the Apk build is completed. The results of the inspection will be printed on the console：
 
