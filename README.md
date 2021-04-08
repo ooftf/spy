@@ -27,7 +27,7 @@ Add dependencies in **`build.gradle`** of the **`root project`**：
     }
     dependencies {
         // ...
-        classpath('com.ooftf:spy-plugin:1.0.1') {
+        classpath('com.ooftf:spy-plugin:1.0.4') {
             exclude group: 'com.android.tools.build', module: 'gradle'
         }
     }

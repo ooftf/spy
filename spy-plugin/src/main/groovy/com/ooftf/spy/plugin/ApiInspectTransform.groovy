@@ -56,7 +56,6 @@ class ApiInspectTransform extends Transform {
 
     @Override
     Set<? super QualifiedContent.Scope> getReferencedScopes() {
-
         return TransformManager.SCOPE_FULL_PROJECT
     }
 
@@ -67,6 +66,7 @@ class ApiInspectTransform extends Transform {
 
     @Override
     void transform(TransformInvocation transformInvocation) throws TransformException, InterruptedException, IOException {
+        super.transform(transformInvocation)
         if (!mApiInspectExtension.enable) {
             return
         }
@@ -74,7 +74,6 @@ class ApiInspectTransform extends Transform {
         if (transformInvocation.isIncremental() && isIncremental()) {
             transformInvocation.referencedInputs.each { TransformInput input ->
                 input.directoryInputs.each { DirectoryInput directoryInput ->
-                    File classDirectory = outputProvider.getContentLocation(directoryInput.name, directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
                     Map<File, Status> changedFiles = directoryInput.getChangedFiles()
                     for (Map.Entry<File, Status> changedInput : changedFiles.entrySet()) {
                         File changeInputFile = changedInput.getKey()
@@ -89,15 +88,6 @@ class ApiInspectTransform extends Transform {
                                 mProjectFilePaths.add(directoryInput.file)
                                 break
                             case Status.REMOVED:
-                                String removeFileName = FileUtils.relativePossiblyNonExistingPath(changeInputFile, directoryInput.file)
-                                File removeFile = new File(classDirectory, removeFileName)
-                                if (removeFile.exists()) {
-                                    if (removeFile.isDirectory()) {
-                                        FileUtils.deletePath(removeFile)
-                                    } else {
-                                        FileUtils.deleteIfExists(removeFile)
-                                    }
-                                }
                                 break
                             default:
                                 break
@@ -127,8 +117,6 @@ class ApiInspectTransform extends Transform {
                 input.directoryInputs.each { DirectoryInput directoryInput ->
                     mClassPool.appendClassPath(directoryInput.file.absolutePath)
                     mProjectFilePaths.add(directoryInput.file)
-
-
                 }
 
                 input.jarInputs.each { JarInput jarInput ->
