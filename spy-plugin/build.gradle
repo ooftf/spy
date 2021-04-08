@@ -12,6 +12,6 @@ dependencies {
 apply plugin: 'ooftf-publish'
 publish {
     override = true
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
 }
 //./gradlew :inspect-plugin:clean :inspect-plugin:build :inspect-plugin:bintrayUpload -PdryRun=false

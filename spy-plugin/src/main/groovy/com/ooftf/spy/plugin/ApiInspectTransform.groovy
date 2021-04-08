@@ -74,7 +74,7 @@ class ApiInspectTransform extends Transform {
         if (transformInvocation.isIncremental() && isIncremental()) {
             transformInvocation.referencedInputs.each { TransformInput input ->
                 input.directoryInputs.each { DirectoryInput directoryInput ->
-
+                    File classDirectory = outputProvider.getContentLocation(directoryInput.name, directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
                     Map<File, Status> changedFiles = directoryInput.getChangedFiles()
                     for (Map.Entry<File, Status> changedInput : changedFiles.entrySet()) {
                         File changeInputFile = changedInput.getKey()
