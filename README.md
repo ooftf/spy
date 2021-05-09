@@ -9,8 +9,7 @@
 * 添加了interruptBuild属性，可选择打断Build过程
 
 -------------------------------------------------------------------------------
-
-[ ![Download](https://api.bintray.com/packages/ooftf/maven/spy-plugin/images/download.svg) ](https://bintray.com/ooftf/maven/spy-plugin/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.ooftf/spy-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.ooftf/spy-plugin)
 ## **Introduce**
 
 
