@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'ooftf-spy'
+   /* id 'ooftf-spy'*/
 }
 
 android {
@@ -31,7 +31,7 @@ android {
         jvmTarget = '1.8'
     }
 }
-spy {
+/*spy {
 
     enable true //Whether api inspect is enabled.
 
@@ -50,7 +50,7 @@ spy {
 //        api 'com.google.zxing'
 //    }
 
-}
+}*/
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

@@ -11,6 +11,6 @@ dependencies {
 
 apply plugin: 'ooftf-maven'
 publish {
-    version = '1.0.4'
+    version = '1.0.5'
 }
 //./gradlew :inspect-plugin:clean :inspect-plugin:build :inspect-plugin:bintrayUpload -PdryRun=false
