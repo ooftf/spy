@@ -220,7 +220,8 @@ class ApiInspectTransform extends Transform {
 
         def androidJar = "${android.getSdkDirectory().getAbsolutePath()}${File.separator}platforms${File.separator}" +
                 "${android.getCompileSdkVersion()}${File.separator}android.jar"
-
+ /*       println("androidJar::"+androidJar)
+        println("androidJar.exists::"+new File(androidJar).exists())*/
         mClassPool.appendClassPath(androidJar)
     }
 
