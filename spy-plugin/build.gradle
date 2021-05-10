@@ -4,13 +4,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation gradleApi()//gradle sdk
     implementation localGroovy()//groovy sdk
-    implementation 'com.android.tools.build:gradle:4.1.3'
+    compileOnly 'com.android.tools.build:gradle:4.2.0'
     implementation 'org.javassist:javassist:3.25.0-GA'
 }
 
 
 apply plugin: 'ooftf-maven'
 publish {
-    version = '1.0.5'
+    version = '1.0.6'
 }
 //./gradlew :inspect-plugin:clean :inspect-plugin:build :inspect-plugin:bintrayUpload -PdryRun=false

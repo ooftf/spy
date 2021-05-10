@@ -171,7 +171,7 @@ class ApiInspectTransform extends Transform {
         ApiInspectTools.exportApiInspectResult(mProject, variant, incompatibleClassInfoSet, incompatibleMethodInfoSet)
         mClassPool.clearImportedPackages()
         if (mApiInspectExtension.interruptBuild && (!incompatibleClassInfoSet.isEmpty() || !incompatibleMethodInfoSet.isEmpty())) {
-            throw SpyException("class error:" + incompatibleClassInfoSet.size() + "; method error:" + incompatibleMethodInfoSet.size())
+            throw new SpyException("class error:" + incompatibleClassInfoSet.size() + "; method error:" + incompatibleMethodInfoSet.size())
         }
 
     }
@@ -220,6 +220,7 @@ class ApiInspectTransform extends Transform {
 
         def androidJar = "${android.getSdkDirectory().getAbsolutePath()}${File.separator}platforms${File.separator}" +
                 "${android.getCompileSdkVersion()}${File.separator}android.jar"
+
         mClassPool.appendClassPath(androidJar)
     }
 
