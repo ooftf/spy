@@ -2,10 +2,10 @@ apply plugin: 'groovy'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation gradleApi()//gradle sdk
-    implementation localGroovy()//groovy sdk
-    compileOnly 'com.android.tools.build:gradle:4.2.0'
-    implementation 'org.javassist:javassist:3.25.0-GA'
+    implementation gradleApi()//// gradle-api-6.7.1
+    implementation localGroovy()//groovy sdk// groovy-all-1.3-2.5.12
+     compileOnly 'com.android.tools.build:gradle:4.2.0'
+     implementation 'org.javassist:javassist:3.25.0-GA'
 }
 
 
